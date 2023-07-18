@@ -1,0 +1,72 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <script src="https://kit.fontawesome.com/f245be49d1.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1><a href="{% url 'products:home' %}">aaa</a></h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'products:home'%}">Home</a></li>
+                <li><a href="{% url 'products:contact'%}">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="user">
+            {% if request.user.is_authenticated %}
+                <p class="username">{{request.user}}</p>
+                <button class="btn2"><a href="{% url 'users:sign-out' %}">sign out</a></button>
+            {% else %}
+                <button class="btn"><a href="{% url 'users:sign-in' %}" >sign in</a></button>
+                <button class="btn1"><a href="{% url 'users:sign-up' %}" >sign up</a></button>
+            {% endif %}
+        </div>
+    </header>
+    <main>
+        <div class="section1">
+            <div class="detailview" style="background-image: url('{{ product.image.url }}')"></div>
+            <div class="detailtxt">
+                <h2>{{product.title}}</h2>
+                <p>model:{{product.model}}</p>
+                <p>price: {{product.price}}_GEL</p>
+
+            </div>
+        </div>
+        <div class="adcom">
+            <h2 class="comments">Comments:</h2>
+            <div class="section2">
+                
+                <ul>
+                    {% for comment in comments %}
+                        <li>{{ comment.user.username }} - {{ comment.txt }}</li>
+                    {% empty %}
+                        <li>No comments yet.</li>
+                    {% endfor %}
+                </ul>
+
+
+                
+            </div>
+            {% if request.user.is_authenticated %}
+                <form method="post" action="{% url 'products:product-detail' product.pk %}" class="form">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btnbtn">Submit</button>
+                </form>
+            {% endif %}
+
+         </div> 
+
+        
+    </main>
+    <footer>
+        <a href="https://www.facebook.com/profile.php?id=100074763317918" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/valiente_2022/"target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+    </footer>
+</body>
+</html>

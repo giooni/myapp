@@ -1,0 +1,68 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <script src="https://kit.fontawesome.com/f245be49d1.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1><a href="{% url 'products:home' %}">aaa</a></h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'products:home'%}">Home</a></li>
+                <li><a href="{% url 'products:contact'%}">Contact</a></li>
+            </ul>
+        </nav>
+        <form role="search">
+            <input name='q'value='{{ request.GET.q }}' type="text" placeholder="filter">
+            <button type="submit">filter</button>
+        </form>
+        <div class="user">
+            {% if request.user.is_authenticated %}
+                <p class="username">{{request.user}}</p>
+                <button class="btn2"><a href="{% url 'users:sign-out' %}">sign out</a></button>
+            {% else %}
+                <button class="btn"><a href="{% url 'users:sign-in' %}" >sign in</a></button>
+                <button class="btn1"><a href="{% url 'users:sign-up' %}" >sign up</a></button>
+            {% endif %}
+        </div>
+    </header>
+    <main>
+        <div class="productmain">
+            {% for product in products %}
+                <a href="{% url 'products:product-detail' product.pk %}"><div class="each">
+                    <div class="image" style="background-image: url('{{ product.image.url }}')"></div>
+                    
+                    <p>Price:{{ product.price }}-GEL</p>
+                </div></a>
+                
+            {% empty %}
+                <p class="nofound">No wallets found.</p>
+            {% endfor %}
+            
+        </div>
+        <div class="paginate">
+            {% for page_number in page_obj.paginator.get_elided_page_range %}
+                {% if page_number == page_obj.paginator.ELLIPSIS %}
+                        {{page_number}}
+                {% else %}
+                <a href="{% url 'products:wallets' %}?page={{ page_number }}"
+                    class="{% if page_number == page_obj.number %}current{% endif %}">
+                    {{ page_number }}
+                </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    
+
+    </main>
+    <footer>
+        <a href="https://www.facebook.com/profile.php?id=100074763317918" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/valiente_2022/"target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+    </footer>
+</body>
+</html>

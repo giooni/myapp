@@ -1,0 +1,47 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <script src="https://kit.fontawesome.com/f245be49d1.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1><a href="{% url 'products:home' %}">aaa</a></h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'products:home'%}">Home</a></li>
+                <li><a href="{% url 'products:contact'%}">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="user">
+            {% if request.user.is_authenticated %}
+                <p class="username">{{request.user}}</p>
+                <button class="btn2"><a href="{% url 'users:sign-out' %}">sign out</a></button>
+            {% else %}
+                <button class="btn"><a href="{% url 'users:sign-in' %}" >sign in</a></button>
+                <button class="btn1"><a href="{% url 'users:sign-up' %}" >sign up</a></button>
+            {% endif %}
+        </div>
+    </header>
+    <main>
+        <div class="publicinfo">
+            <p>Address: Gldani Mall 3 floor</p>
+            <p>Number: 593 978 978</p>
+            <p>Mail: valiente@gmail.com</p>
+            <p>facebook: <a href="https://www.facebook.com/profile.php?id=100074763317918">facebook.com</a></p>
+            <p>instagram: <a href="https://www.instagram.com/valiente_2022/">instagram.com</a></p>
+        </div>
+        
+
+
+    </main>
+    <footer>
+        <a href="https://www.facebook.com/profile.php?id=100074763317918" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/valiente_2022/"target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+    </footer>
+</body>
+</html>

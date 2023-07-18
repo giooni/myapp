@@ -1,0 +1,36 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://kit.fontawesome.com/f245be49d1.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1><a href="{% url 'products:home' %}">aaa</a></h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'products:home' %}">Home</a></li>
+                <li><a href="{% url 'products:contact'%}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="signuppage">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_div }}
+                <button class="btn1">sign up</button>
+            </form>
+        </div>
+
+    </main>
+    <footer>
+        <a href="https://www.facebook.com/profile.php?id=100074763317918" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/valiente_2022/"target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+    </footer>
+</body>
+</html>

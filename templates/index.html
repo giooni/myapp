@@ -1,0 +1,37 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <script defer src="{% static 'js/slide.js' %}"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header class="first">
+        
+        
+    </header>
+    
+    <main class="firstpage">
+        <div class="slider">
+            <img src="{% static 'img/jack.jpg'%}" alt="" class="slide active">
+            <img src="{% static 'img/ser.jpg'%}" alt="" class="slide">
+            <img src="{% static 'img/wallet.jpg'%}" alt="" class="slide">
+        </div>
+        
+        <div class="txt">
+            <p>Valiente's Leather Craft</p>
+            <p class="special">Special for you !</p>
+            <button><a href="{% url 'products:home' %}">Shop Now</a></button>
+        </div>
+        
+    </main>
+    <footer class="first">
+
+    </footer>
+
+    
+</body>
+</html>

@@ -1,0 +1,543 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+header{
+    height: 100px;
+    width: 100%;
+    background-color: rgb(62, 62, 68);
+    display: flex;
+    align-items: center;
+}
+header form{
+    margin-left: 50px;
+    width: 300px;
+    height: 30px;
+}
+header form input{
+    font-size: 16px;
+    height: 30px;
+}
+header form button{
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 18px;
+    color: white;
+    background-color: black;
+    border: none;
+}
+
+header nav{
+    width: 400px;
+    
+    
+}
+header nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+header nav ul li a{
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+
+}
+.firstpage{
+    height: 100vh;
+    width: 100%;
+    padding: 0;
+    
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.first{
+    display: none;
+}
+
+.txt{
+    position: fixed;
+    width: 700px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.txt p{
+    font-size: 60px;
+    font-weight: bolder;
+    color: white;
+    
+    
+}
+.special{
+    font-size: 64px;
+    font-family:'Brush Script MT', cursive;
+}
+.txt button{
+    width: 150px;
+    height: 50px;
+    background-color: black;
+    border: none;
+    border-radius: 30px;
+}
+.txt button a{
+    font-size: 24px;
+    font-weight: bolder;
+    color: white;
+}
+.slider{
+    width: 100%;
+    height: 100%;
+    
+    overflow: hidden;
+}
+.slide{
+    width: 100%;
+    display: none;
+    
+}
+.active{
+    display: block;
+}
+h1{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-image: url(../img/logo.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-left: 50px;
+    overflow: hidden;
+    text-indent: -32000px;
+    cursor: pointer;
+    
+    
+}
+.user{
+    width: 300px;
+    height: 100%;
+    position: absolute;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.btn{
+    width: 80px;
+    height: 30px;
+    border: none;
+    border-radius: 8px;
+    background-color: black;
+}
+.btn a{
+    color: white;
+    font-size: 18px;
+    
+}
+.btn1{
+    width: 80px;
+    height: 30px;
+    background-color: black;
+    border: none;
+    border-radius: 8px;
+    
+}
+.btn1 a{
+    font-size: 18px;
+    color: white;
+}
+.username{
+    color: white;
+    font-size: 18px;
+}
+.user .btn2{
+    width: 90px;
+    height: 30px;
+    background-color: black;
+    border: none;
+    border-radius: 8px;
+
+}
+.user .btn2 a{
+    color: white;
+    font-size: 18px;
+}
+
+.sign{
+    width: 600px;
+    height: 300px;
+    margin: 50px auto;
+    background-color: rgb(62, 62, 68);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.sign form{
+    width: 300px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+   
+}
+.sign form div{
+    font-size: 20px;
+    color: white;
+}
+
+
+.sign button{
+    color: white;
+    font-size: 18px;
+}
+
+.signuppage{
+    width: 600px;
+    height: 300px;
+    margin: 50px auto;
+    background-color: rgb(62, 62, 68);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    
+}
+.signuppage form{
+    width: 400px;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+   
+}
+.signuppage form div{
+    font-size: 20px;
+    color: white;
+}
+.signuppage .helptext{
+    display: none;
+}
+
+.signuppage button{
+    color: white;
+    font-size: 18px;
+}
+.conteiner{
+    width: 800px;
+    height: 500px;
+    
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.wallets{
+    width: 250px;
+    height: 300px;
+    background-image: url(../img/wallet1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+}
+.wallets:hover{
+    background-size: 120%;
+    transition: 2s;
+}
+.wallets p{
+    color: white;
+    font-size: 30px;
+}
+.bags{
+    width: 550px;
+    height: 250px;
+    background-image: url(../img/bags.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+}
+.bags:hover{
+    background-size: 120%;
+    transition: 2s;
+}
+.bags p{
+    color: white;
+    font-size: 30px
+}
+.accessories{
+    height: 200px;
+    width: 350px;
+    background-image: url(../img/acsesories.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    background-position-y:-60px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+}
+.accessories:hover{
+    background-size: 120%;
+    transition: 2s;
+}
+.accessories p{
+    color: white;
+    font-size: 30px
+}
+.belts{
+    width: 450px;
+    height: 250px;
+    background-image: url(../img/belts.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: -40px;
+    background-size: 100%;
+    margin-top: -50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 20px;
+
+}
+.belts:hover{
+    background-size: 120%;
+    transition: 2s;
+}
+.belts p{
+    color: white;
+    font-size: 30px
+}
+
+main{
+    padding: 50px;
+    
+}
+
+
+.each{
+    
+    width: 300px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 30px;
+}
+.each p{
+    font-size: 20px;
+    color: black;
+}
+.image{
+    width: 300px;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+
+.detailview{
+    width: 400px;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.detailtxt{
+    width: 800px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 50px;
+}
+.detailtxt h2{
+    font-size: 40px;
+}
+.detailtxt p{
+    font-size: 30px;
+}
+
+.publicinfo{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    background-color: rgb(62, 62, 68);
+}
+
+.publicinfo p{
+    margin-left: 30px;
+    font-size: 18px;
+    color: white;
+}
+.publicinfo p a{
+    font-size: 18px;
+    color: white;
+}
+.nofound{
+    font-size: 20px;
+    
+}
+
+.section1{
+    width: 100%;
+    display: flex;
+}
+.section2{
+    width: 100%;
+    padding: 0 50px;
+    height: 300px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    justify-content: space-around;
+}
+.section2 ul {
+    width: 100%;
+    height: 100%;
+}
+.section2 ul li{
+    width: 100%;
+    padding: 5px;
+    border: solid 1px white;
+    color: white;
+    margin-top: 8px;
+    font-size: 18px;
+    
+    
+}
+.productmain{
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+.current{
+    font-size: 22px;
+    height: 24px;
+    width: 24px;
+    text-align: center;
+    background-color: grey;
+    color: white;
+    
+}
+.paginate{
+    width: 200px;
+    height: 30px;
+    
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.paginate a{
+    font-size: 18px;
+    color: black;
+}
+
+.adcom{
+    width: 80%;
+    padding: 50px;
+    background-color: rgb(62, 62, 68);
+    margin: 50px auto;
+    opacity: 0.7;
+    
+}
+.adcom h2{
+    color: white;
+}
+
+.comments{
+    margin: 30px;
+}
+label{
+    display: none;
+}
+
+.btnbtn{
+    width: 90px;
+    height: 30px;
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+}
+.form{
+    width: 100%;
+    
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+textarea{
+    resize: none;
+    width: 600px;
+    height: 40px;
+    overflow-y: scroll;
+    margin-right: 20px;
+}
+footer{
+    
+    
+    margin-top: auto;
+    height: 100px;
+    width: 100%;
+    background-color: rgb(62, 62, 68);
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px;
+    gap: 10px;
+    
+    
+    
+}
+footer a{
+    width: 40px;
+    height: 40px;
+}
+footer i{
+    font-size: 40px;
+    color: black;
+}
