@@ -489,7 +489,7 @@ main{
 .comments{
     margin: 30px;
 }
-label{
+.form label{
     display: none;
 }
 
